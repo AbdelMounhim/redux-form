@@ -8,13 +8,13 @@ import SimpleForm from './SimpleForm';
 
 const rootEl = document.getElementById('root');
 
-
+const objet={ "prenom" : "hafida" , "color" : "00ff00"} ;
 
 ReactDOM.render(
   <Provider store={store}>
     <div style={{ padding: 15 }}>
       <h2>Simple Form</h2>
-      <SimpleForm onSubmit={showResults}  />
+      <SimpleForm onSubmit={showResults} objet={objet} />
       <Values form="simple" />
     </div>
   </Provider>,
