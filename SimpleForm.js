@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
@@ -92,18 +91,3 @@ const SimpleForm = props => {
   );
 };
 
-function mapStateToProps(state, ownProps) {
-  return {
-    initialValues: {
-      firstName: ownProps.objet.prenom,
-      favoriteColor: ownProps.objet.color,
-    },
-  };
-}
-
-let reduxSimpleForm = reduxForm({
-  form: 'simple', // a unique identifier for this form
-})(SimpleForm);
-
-reduxSimpleForm = connect(mapStateToProps, null)(reduxSimpleForm);
-export default reduxSimpleForm;
